@@ -1,14 +1,201 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./fonts.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/output.css">
     <title>Document</title>
 </head>
+
 <body>
-    <div class="main">
-        <h1 class="text-3xl text-amber-200">My name</h1>
-    </div>
+    <header class="container mx-auto mulish">
+        <div class="navbar bg-base-100 flex justify-between py-8">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 gap-y-4">
+                        <div class="tooltip rounded-full border border-[#e0e0e2] w-12 h-12 flex justify-center items-center text-[#6e6f7f] cursor-pointer"
+                            data-tip="Home">
+                            <span class="text-2xl"><i class="fa-solid fa-house"></i></span>
+                        </div>
+                        <div class="tooltip rounded-full border border-[#e0e0e2] w-12 h-12 flex justify-center items-center text-[#6e6f7f] cursor-pointer"
+                            data-tip="Blog">
+                            <span><i class="fa-solid fa-pen"></i></span>
+                        </div>
+                        <div class="tooltip rounded-full border border-[#e0e0e2] w-12 h-12 flex justify-center items-center text-[#6e6f7f] cursor-pointer"
+                            data-tip="Log In">
+                            <span><i class="fa-solid fa-user-plus"></i></span>
+                        </div>
+                        <div class="tooltip rounded-full border border-[#e0e0e2] w-12 h-12 flex justify-center items-center text-[#6e6f7f] cursor-pointer"
+                            data-tip="Support">
+                            <span><i class="fa-regular fa-flag"></i></span>
+                        </div>
+                        <div class="">
+                            <button
+                                class="btn text-white text-xl font-bold bg-blue-500 rounded-full px-10 hover:text-black">Sign
+                                In</button>
+                        </div>
+                    </ul>
+                </div>
+                <a class="btn btn-ghost font-extrabold text-3xl">DreamBlog</a>
+            </div>
+            <div class=" hidden lg:flex">
+                <div class="flex justify-center items-center gap-x-8">
+                    <div class="tooltip rounded-full border border-[#e0e0e2] w-12 h-12 flex justify-center items-center text-[#6e6f7f] cursor-pointer"
+                        data-tip="Home">
+                        <span class="text-2xl"><i class="fa-solid fa-house"></i></span>
+                    </div>
+                    <div class="tooltip rounded-full border border-[#e0e0e2] w-12 h-12 flex justify-center items-center text-[#6e6f7f] cursor-pointer"
+                        data-tip="Blog">
+                        <span><i class="fa-solid fa-pen"></i></span>
+                    </div>
+                    <div class="tooltip rounded-full border border-[#e0e0e2] w-12 h-12 flex justify-center items-center text-[#6e6f7f] cursor-pointer"
+                        data-tip="Log In">
+                        <span><i class="fa-solid fa-user-plus"></i></span>
+                    </div>
+                    <div class="tooltip rounded-full border border-[#e0e0e2] w-12 h-12 flex justify-center items-center text-[#6e6f7f] cursor-pointer"
+                        data-tip="Support">
+                        <span><i class="fa-regular fa-flag"></i></span>
+                    </div>
+                    <div class="">
+                        <button
+                            class="btn text-white text-xl font-bold bg-blue-500 rounded-full px-10 hover:text-black">Sign
+                            In</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+
+        <!---hero section start here -->
+
+        <section class="hero-section container mx-auto py-10 px-2">
+            <div class="hero h-[550px] bg-center bg-no-repeat bg-cover bg-[#030312CC] rounded-2xl"
+                style="background-image: url(./images/bgbanner.png);">
+                <!-- <div class="hero-overlay bg-opacity-90"></div> -->
+                <div class="hero-content flex-col md:flex-row lg:flex-row justify-between w-full text-neutral-content">
+                    <div class="py-10">
+                        <h1 class="text-3xl md:text-4xl lg:text-7xl text-bold font-black sm:pt-2 md:pt-6 lg:pt-10">
+                            Welcome to the <br>Dreamforum </h1>
+                        <p class="text-xl py-4 md:py-4 lg:py-10">Share your favorite opinion and win and wp <br> forum
+                            coffee mug!</p>
+                        <label class="input input-bordered flex items-center gap-2 rounded-full w-[70%]">
+                            <input type="text" class="grow" placeholder="Search" />
+                            <button
+                                class="btn text-white text-xl font-bold bg-blue-500 rounded-full px-6 hover:text-black">Sign
+                                In</button>
+                        </label>
+                    </div>
+                    <div
+                        class="bg-white rounded-2xl w-[80%] md:w-[40%] lg:w-[35%] text-black px-10 py-5 text-xl md:text-2xl lg:text-2xl font-semibold">
+                        <div class="flex justify-between mb-2 md:mb-3 lg:mb-4">
+                            <h1>Registered user</h1>
+                            <span>01</span>
+                        </div>
+                        <div class="flex justify-between mb-2 md:mb-3 lg:mb-4">
+                            <h1>Registered user</h1>
+                            <span>01</span>
+                        </div>
+                        <div class="flex justify-between mb-2 md:mb-3 lg:mb-4">
+                            <h1>Registered user</h1>
+                            <span>01</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <h1>Registered user</h1>
+                            <span>01</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- lets discuss section start here -->
+
+        <section class="discuss-section container mx-auto">
+            <div class="title text-center">
+                <h1 class="mulish font-extrabold text-2xl md:text-4xl lg:text-5xl text-black">Let's Discuss</h1>
+                <p class="text-lg lg:text-xl text-[#717181] inter py-4">Yes, you can run unit tests and view the results directly
+                    within the <br> app. The integrated testing features allow for a streamlined .</p>
+            </div>
+        </section>
+
+
+
+
+
+        <!-- banner-section start -->
+        <section class="hero-section container mx-auto py-10 px-2">
+            <div class="hero h-[550px] bg-center bg-no-repeat bg-cover bg-[#030312CC] rounded-2xl">
+                <!-- <div class="hero-overlay bg-opacity-90"></div> -->
+                <div class="hero-content flex-col md:flex-row lg:flex-row justify-between w-full text-neutral-content">
+                    <div class="py-10">
+                        <h1 class="text-3xl md:text-4xl lg:text-7xl text-bold font-black sm:pt-2 md:pt-6 lg:pt-10">
+                            Join Our Forum</h1>
+                        <p class="text-xl py-4 md:py-4 lg:py-10">Share your favorite opinion and win and wp forum coffee
+                            mug! Yes, you can <br> run unit tests and view the results directly within the app. </p>
+
+                        <button
+                            class="btn outline-none border-none text-white text-xl font-bold bg-blue-500 rounded-full px-6 hover:text-black">
+                            Register Now</button>
+
+                    </div>
+                    <div class="">
+                        <img class="max-w-full overflow-hidden" src="./images/joinforum.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- latest-post section -->
+
+        <section class="container mx-auto py-10">
+            <div class="title text-center">
+                <h1 class="mulish font-extrabold text-2xl md:text-4xl lg:text-5xl text-black">Latest Post</h1>
+                <p class="text-lg lg:text-xl text-[#717181] inter py-4">Yes, you can run unit tests and view the results directly within the app. The <br> integrated testing features allow for a streamlined .</p>
+            </div>
+        </section>
+
+
+    </main>
+    <footer>
+
+        <section class="bg-[#f6f6f7] py-10">
+            <div class="title text-center p-4">
+                <h1 class="mulish font-extrabold text-2xl md:text-4xl lg:text-5xl text-black">DreamBlog</h1>
+                <p class="text-lg lg:text-xl text-[#717181] inter py-4">Yes, you can run unit tests and view the results directly within the app. The <br> integrated testing features allow for a streamlined .</p>
+            </div>
+            <div class="flex gap-4 md:gap-6 lg:gap-8 justify-center py-4 md:py-8 lg:py-10 px-4">
+                <span class="text-3xl"><i class="fa-brands fa-instagram"></i></span>
+                <span class="text-3xl"><i class="fa-brands fa-facebook"></i></span>
+                <span class="text-3xl"><i class="fa-brands fa-twitter"></i></span>
+                <span class="text-3xl"><i class="fa-brands fa-linkedin"></i></span>
+            </div>
+            <hr>
+            <div class="text-center p-4">
+                <p class="pt-2 md:pt-10 lg:pt-16 pb-4 text-lg lg:text-xl text-[#878795]">&copy;All rights reserverd by Dream Forum</p>
+            </div>
+        </section>
+        
+
+    </footer>
+
+
+
+    <script src="https://kit.fontawesome.com/eb405f6857.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
