@@ -7,3 +7,14 @@
 .inter{
     font-family: "Inter", sans-serif;
 }
+
+.input-btn{}
+.input-btn input{
+    padding: 16px 20px;
+}
+.input-btn button{
+    color: white;
+    background: blue;
+    font-size: 18px;
+    font-weight: bold;
+}
