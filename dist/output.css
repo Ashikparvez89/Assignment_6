@@ -2063,6 +2063,16 @@ html {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
+.border-\[\#dbdce0\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(219 220 224 / var(--tw-border-opacity));
+}
+
 .bg-\[\#030312CC\] {
   background-color: #030312CC;
 }
@@ -2110,6 +2120,11 @@ html {
 .bg-slate-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#dbdce0\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 220 224 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-90 {
