@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./fonts.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/output.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
     <title>Document</title>
 </head>
 
@@ -93,9 +94,9 @@
                             coffee mug!</p>
 
                         <div class="mt-5 input-btn w-[100%] mx-auto md:w-full lg:w-full">
-                            <input class="w-[90%] md:w-[20em] lg:w-[30em] mx-auto rounded-full" type="text"
+                            <input id="searchbox" class="w-[90%] md:w-[20em] lg:w-[30em] mx-auto rounded-full text-black" type="text"
                                 placeholder="Search Here">
-                            <button
+                            <button onclick="handlesearch()"
                                 class="rounded-full ml-[-6em] md:ml-[-7em] lg:ml-[-7em] px-5 md:px-7 lg:px-7 py-3">Search</button>
                         </div>
 
@@ -133,6 +134,12 @@
                 <p class="text-lg lg:text-xl text-[#717181] inter py-4">Yes, you can run unit tests and view the results
                     directly
                     within the <br> app. The integrated testing features allow for a streamlined .</p>
+
+
+            </div>
+
+            <div id="loadingspninner" class="text-center mt-20 hidden">
+                <span class="loading loading-spinner text-neutral"></span>
             </div>
 
 
@@ -194,14 +201,17 @@
                             <h1 class="text-[#6c6c81] "><span class="mr-4"><i class="fa-solid fa-check"></i></span>Mark
                                 As Read <span id="increaser"> 0 </span></h1>
                         </div>
-                        <div class="flex justify-between gap-4 px-4 py-6 rounded-2xl bg-white mt-4">
-                            <div class="">
-                                <p class="text-black text-lg lg:text-xl">10 Kids Unaware of Their Halloween Costume</p>
-                            </div>
-                            <div class="inline-flex justify-center items-center content-center gap-5">
-                                <span><i class="fa-regular fa-eye"></i></span>
-                                <p>560</p>
-                            </div>
+                        <div id="postTracker" class="">
+                            <!-- <div class="flex justify-between gap-4 px-4 py-6 rounded-2xl bg-white mt-4">
+                                <div class="">
+                                    <p class="text-black text-lg lg:text-xl">10 Kids Unaware of Their Halloween Costume</p>
+                                </div>
+                                <div class="inline-flex justify-center items-center content-center gap-5">
+                                    <span><i class="fa-regular fa-eye"></i></span>
+                                    <p>560</p>
+                                </div>
+                            </div> -->
+
                         </div>
                     </div>
                 </div>
@@ -312,6 +322,7 @@
 
 
     </footer>
+
 
 
 

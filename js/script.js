@@ -1,29 +1,29 @@
 
-
-
-const getSearchPost = async () => {
+const getSearchPost = async (query) => {
     const response = await fetch(
-        `https://openapi.programming-hero.com/api/retro-forum/posts`,
+        `https://openapi.programming-hero.com/api/retro-forum/posts${query}`,
     );
     const convertPost = await response.json();
-    console.log(convertPost);
+    console.log(convertPost)
     const getPostconatiner = document.getElementById("posts");
+
+    getPostconatiner.textContent = '';
     let increase = 1;
     convertPost.posts.forEach((element) => {
         const makediv = document.createElement("div");
+
         makediv.innerHTML = `
          <div
          class="flex-col lg:flex-row md:flex-row flex justify-between gap-10 p-5 lg:p-10 bg-[#f2f2ff] rounded-2xl mt-5 inter">
          
-         <div class="">
-         <div id="statusid" class="avatar">
-         <div class="rounded-xl" style="width: 170px;">
-         <img style="border-radius: 8%;" src="${element.image}" />
-         </div>
-       </div>
-  
-      </div>
-  
+
+        <div class="my-element ${element.isActive ? 'avatar online' : 'avatar offline'}">
+          <!-- Other content here -->
+          <div class="rounded-xl" style="width: 170px;">
+          <img style="border-radius: 8%;" src="${element.image}" />
+          </div>
+        </div>
+
   
          <div class="">
              <div class="flex gap-6 lg:gap-10">
@@ -52,7 +52,8 @@ const getSearchPost = async () => {
                      </div>
                  </div>
                  <div class="increasebtn cursor-pointer">
-                     <span class="rounded-full p-4 text-xl"><i class="fa-regular fa-envelope-open"></i></span>
+                     <button onclick="handlleClick('${element.title}','${element.view_count}')"><span " class="rounded-full p-4 text-xl"><i class="fa-regular fa-envelope-open"></i></span>
+                     </button>
                  </div>
              </div>
   
@@ -62,36 +63,54 @@ const getSearchPost = async () => {
          `;
 
         getPostconatiner.appendChild(makediv);
+
     });
+    loadingspinner(false);
 
+    // active status is not working
 
- 
     const getbtn = document.querySelectorAll('.increasebtn span');
-    for(const btn of getbtn){
+    for (const btn of getbtn) {
         btn.addEventListener("click", function () {
-            console.log(btn)
             increseer.innerText = increase;
             increase++;
             console.log(increase)
             btn.style.setProperty('color', 'white');
             btn.style.setProperty('background-color', '#10b981');
-            
+
         });
     }
     let increseer = document.getElementById('increaser')
 
 };
 
-getSearchPost();
 
-// const statusId = document.getElementById('statusid');
-// if(element.isActive === true){
+const handlesearch =()=> {
+    loadingspinner(true);
+    const seacrh = document.getElementById('searchbox');
+    const searchText = seacrh.value;
+    console.log(searchText);
+    getSearchPost(`?category=${searchText}`)
+}
 
-//     statusId.classList.add('online')
-// }
-// else{
-//     statusId.classList.add('offline')
-// }
+
+
+getSearchPost('');
+
+
+
+const loadingspinner = (isLoading)=>{
+    const getspinner = document.getElementById('loadingspninner');
+    if(isLoading){
+        getspinner.classList.remove('hidden')
+    }
+    else{
+        getspinner.classList.add('hidden')
+    }
+
+}
+
+
 
 const loadLatest = async () => {
     const res = await fetch(
@@ -99,10 +118,8 @@ const loadLatest = async () => {
     );
 
     const data = await res.json();
-    console.log(data);
     const loadPostContainer = document.getElementById("loadlatestposts");
     data.forEach((element) => {
-        console.log(element);
         const latestdiv = document.createElement("div");
         latestdiv.innerHTML = `
           <div
@@ -137,4 +154,26 @@ const loadLatest = async () => {
 
     });
 };
+
+
+
+const handlleClick = (name,view) => {
+    console.log('btn clicked',name);
+    const post = document.getElementById('postTracker');
+    const divs = document.createElement('div');
+    divs.innerHTML = `
+    <div class="flex justify-between gap-4 px-4 py-6 rounded-2xl bg-white mt-4">
+    <div class="">
+        <p class="text-black text-lg lg:text-xl">${name}</p>
+    </div>
+    <div class="inline-flex justify-center items-center content-center gap-5">
+        <span><i class="fa-regular fa-eye"></i></span>
+        <p>${view}</p>
+    </div>
+    </div>
+    
+    `;
+    post.appendChild(divs)
+
+}
 loadLatest();
